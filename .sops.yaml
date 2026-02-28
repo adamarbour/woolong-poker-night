@@ -1,0 +1,19 @@
+keys:
+  - &host_spike age1xfavtxweemc54sh3ty5c8yf3v5nmnad4kwgz9j28j3zu5mw3kg9svdpdr5
+
+creation_rules:
+  - path_regex: ^secrets/default\.ya?ml$
+    key_groups:
+    - age:
+      - *host_spike
+      
+  - path_regex: ^secrets/systems/spike\.ya?ml$
+    key_groups:
+    - age:
+      - *host_spike
+      
+  - path_regex: ^secrets/users/adam\.ya?ml$
+    key_groups:
+    - age:
+      - *host_spike
+

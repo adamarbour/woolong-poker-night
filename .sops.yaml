@@ -1,23 +1,32 @@
 keys:
   - &master age1c3ulr09mhfnrvccm5fu0jc4f9r0wzjlt0smga375ewypjfh8pdsqa43vd9
-  - &host_spike age1xfavtxweemc54sh3ty5c8yf3v5nmnad4kwgz9j28j3zu5mw3kg9svdpdr5
+  - &h_spike age1xfavtxweemc54sh3ty5c8yf3v5nmnad4kwgz9j28j3zu5mw3kg9svdpdr5
+  - &s_hammerhead age14gufjkpcfgv05z2ydmel87l6z98ne57jyn56x24zrv77wez2tu2sne9d8r
 
 creation_rules:
   - path_regex: ^secrets/default\.ya?ml$
     key_groups:
     - age:
       - *master
-      - *host_spike
+      - *h_spike
+      - *s_hammerhead
       
   - path_regex: ^secrets/systems/spike\.ya?ml$
     key_groups:
     - age:
       - *master
-      - *host_spike
+      - *h_spike
       
   - path_regex: ^secrets/users/adam\.ya?ml$
     key_groups:
     - age:
       - *master
-      - *host_spike
+      - *h_spike
+      - *s_hammerhead
+      
+  - path_regex: ^secrets/systems/hammerhead\.ya?ml$
+    key_groups:
+    - age:
+      - *master
+      - *s_hammerhead
 
